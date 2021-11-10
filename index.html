@@ -1,0 +1,88 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/estilos.css" media="screen" />
+</head>
+
+<body onload="startDB()">
+    <div class="main">
+        <!--MAIN-container-->
+        <div class="container">
+            <h4>Información de contacto</h4>
+            <form onsubmit="return validarForm()">
+
+                <label for="codigo">Código de cliente: </label>
+                <input type="text" name="codigoCliente" id="codigo" class="cajas" placeholder="xmxwebdemo2" disabled>
+                <br>
+                <label for="usuario">Usuario:</label>
+                <input type="text" name="usuario" id="usuario" class="cajas" required>
+                <br>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" class="cajas" required placeholder="Nombre:*">
+                <br>
+                <label for="cargo">Cargo</label>
+                <input type="text" name="cargo" id="cargo" class="cajas" required placeholder="Cargo:*">
+                <br>
+                <label for="telefono">Teléfono</label>
+                <input type="tel" name="telefono" id="telefono" class="cajas" placeholder="Telefono +57" required>
+                <br>
+                <label for="correo">Correo Electrónico</label>
+                <input type="email" name="email" id="correo" class="cajas" required placeholder="Correo Electronico:*">
+                <br>
+                <label for="celular">Número celular</label>
+                <input type="tel" name="telefono" id="celular" class="cajas" required placeholder="Numero celular:*">
+                <br> 
+                <label for="estadia">Tipo de contacto:</label>
+                <select name="select" required id="tipoContacto">
+                    <option disabled selected>--seleccione tipo de contacto--</option>
+                    <option value="Contacto Comercial">Contacto Comercial</option>
+                    <option value="Pago de factura">Pago de factura</option>
+                    <option value="Representante legal">Representante legal</option>
+                    <option value="Retiro de mercancia">Retiro de mercancia</option>
+                </select></br>
+                </br>
+                <label for="cbox2">Autorizado para accder a WebStore</label><input type="checkbox" id="permisoWebstore"
+                    value="" class="checkBox">
+                </br>
+                <label for="cbox2">Autorizado para crear ordenes</label><input type="checkbox" id="permisoCrearOrdenes"
+                    value="" class="checkBox">
+                </br>
+                <label for="cbox2">¿Desea que se envié la información de acceso al usuario?</label><input
+                    type="checkbox" id="permisoEnvioInformacion" value="" class="checkBox">
+                </br>
+                <div class="btnContainer">
+                    <input type="submit" value="enviar" name="submit" class="btn">
+                </div>
+
+
+            </form>
+        </div>
+        <table id="table-users">
+            <thead> <tr>
+                <th>Usuario</th>
+                <th> Nombre</th>
+                <th> Cargo</th>
+                <th>Telefono</th>
+                <th>Correo</th>
+                <th>Celular </th>
+                <th>Tipo de contacto</th>
+                <th>Web Store</th>
+                <th>Crear Ordenes</th>
+                <th>Envío información</th>
+                <th>Clave</th>
+            </tr></thead>
+            <tbody id="body-table-users">
+    
+            </tbody>
+
+        </table>
+    </div>
+</body>
+<script src="js/validateForm.js"></script>
+<script src="bd/data.js"></script>
+
+</html>
